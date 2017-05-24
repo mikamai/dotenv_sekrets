@@ -1,8 +1,16 @@
 # DotenvSekrets
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dotenv_sekrets`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem makes the `dotenv` gem cooperate nicely with the `sekrets` gem in order to allow encrypted `.env` files in your Rails application.
 
-TODO: Delete this and the text above, and describe your gem
+
+## Rationale
+
+Config files with private tokens, passwords and secrets should not be committed in source-control for security reasons, unless they're encrypted: here it comes DotenvSekrets to the rescue.
+
+When everything is set and done you will need to know/share only the secret key, not the whole configuration which can be safely stored and versioned in your SCM tool.
+
+You can rely on regular `dotenv` files to locally override the encrypted values inside `.env.enc` files or similar.
+
 
 ## Installation
 
@@ -22,20 +30,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Please read [dotenv](https://github.com/bkeepers/dotenv) and [sekrets](https://github.com/ahoward/sekrets) READMEs.
+For a quick setup you may simply want to:
+* create the `.sekrets.key` file in your rails root and put your secret key code there
+* create the `.env.enc` file and edit the content with the shell command `sekrets edit .env.enc`
+* update `.gitignore` to ignore the `.sekrets.key` file
+* `cat .env.enc`and see the content is encrypted
+* commit `.env.enc` into your SCM
+* start rails and see the `ENV` variable is populated with the data you put in `.env.enc`
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/spaghetticode/dotenv_sekrets.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mikamai/dotenv_sekrets.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+
+[rubygems.org](https://github.com/).
