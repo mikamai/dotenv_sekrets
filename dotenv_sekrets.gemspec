@@ -34,6 +34,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
 
-  spec.add_dependency 'dotenv',  '~> 2.1.1'
-  spec.add_dependency 'sekrets', '~> 1.10.0'
+  spec.add_dependency 'rails'
+  spec.add_dependency 'dotenv',       '>= 2.1.1'
+  spec.add_dependency 'dotenv-rails', '>= 2.1.1'
+  spec.add_dependency 'sekrets',      '>= 1.10.0'
 end
