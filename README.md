@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/mikamai/dotenv_sekrets.svg?branch=master)](https://travis-ci.org/mikamai/dotenv_sekrets)
+
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/mikamai/dotenv_sekrets)
+
 # DotenvSekrets
 
 This gem makes the `dotenv` gem cooperate nicely with the `sekrets` gem in order to allow encrypted `.env` files in your Rails application.
