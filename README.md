@@ -43,6 +43,12 @@ For a quick setup you may simply want to:
 * commit `.env.enc` into your SCM
 * start rails and see the `ENV` variable is populated with the data you put in `.env.enc`
 
+### Usage with Travis
+From the [sekrets gem documentation](https://github.com/ahoward/sekrets#key-lookup) the gem will look for the key in the environment under the env var SEKRETS_KEY in case there is no `sekrets.key` file.
+So to use the gem with travis it is sufficient to add this environment variable
+```
+SEKRETS_KEY = <your-sekret-key>
+```
 
 ## Contributing
 
